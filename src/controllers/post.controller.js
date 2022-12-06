@@ -53,10 +53,13 @@ class PostController {
     }
     async editPost(req, res, next) {
         try {
+            
             let id = req.params.id;
             let data = req.body.name;
-            await Post.findByIdAndUpdate(id,{name: data})
+             await Post.findByIdAndUpdate(id,{name: data})
+            let editedPost = await Post.findById(id)
             return res.status(200).json({
+                data: editedPost,
                 status: 'Update post successfully'
             })
         }

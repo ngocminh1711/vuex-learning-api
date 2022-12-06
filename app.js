@@ -17,6 +17,5 @@ db.connect()
 .then(() => { console.log('DB connected successfully') })
 .catch((err) => { console.log(err.message) });
 
-
 app.listen(PORT,()=> { console.log(`Server listening on ${PORT}`) });
 
