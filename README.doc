@@ -1,0 +1,4 @@
+getAllPost .get('http://localhost:8000/api)
+createNewPost ('http://localhost:8000/api/create')
+deletePost .delete('http://localhost:8000/api/:id')
+editPost .patch('http://localhost:8000/api/:id')
