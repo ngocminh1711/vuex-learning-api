@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import DBconnect from './src/models/DB.connect';
-import postRouter from './src/routers/post.router'
+import productRouter from './src/routers/product.router';
 
 const app = express();
 const PORT = 8000;
@@ -11,7 +11,7 @@ const db = new DBconnect();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/api', postRouter)
+app.use('/api', productRouter)
 
 db.connect()
 .then(() => { console.log('DB connected successfully') })
